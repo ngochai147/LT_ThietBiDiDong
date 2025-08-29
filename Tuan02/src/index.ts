@@ -1,4 +1,11 @@
 import helloAsync from "./bai1";
+import { runTask } from "./bai11";
+import { callTask } from "./bai12";
+import { runWithError } from "./bai13";
+import { numberAfter1s } from "./bai14";
+import { runSequential } from "./bai15";
+import { runParallel } from "./bai16";
+import { iteratePromises } from "./bai17";
 import resolveWithTen from "./bai2";
 import rejectMessage from "./bai3";
 import getRandomNumber from "./bai4";
@@ -32,3 +39,17 @@ filterNumbers([1,2,3,4,5,6]).then((message) => { console.log("Bai 9: " + message
 console.log(getRandomNumber().then((message) => console.log("Bai 10: " + message))
     .catch((message) => console.log("Loi bai 10: " + message))
     .finally(()=> console.log("Bai 10:Done")))
+//bai11
+runTask()
+//bai 12
+callTask()
+//bai 13
+runWithError()
+//bai 14
+numberAfter1s(10).then(a=> console.log("Bai 14: "+a))
+//bai 15
+runSequential()
+//bai 16
+runParallel()
+//bai 17
+iteratePromises()
