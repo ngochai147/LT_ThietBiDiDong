@@ -6,8 +6,21 @@ import { numberAfter1s } from "./bai14";
 import { runSequential } from "./bai15";
 import { runParallel } from "./bai16";
 import { iteratePromises } from "./bai17";
+import { fetchUser } from "./bai18";
+import { fetchUsers } from "./bai19";
 import resolveWithTen from "./bai2";
+import { fetchUser20 } from "./bai20";
+import { fetchTodo } from "./bai21";
+import { fetchMultipleTodos } from "./bai22";
+import { fectchCompleted } from "./bai23";
+import { postData } from "./bai24";
+import { downloadFile } from "./bai25";
+import { downloadFileWait5 } from "./bai26";
+import { fetchWithRetry } from "./bai27";
+import { batchProcess } from "./bai28";
+import { queueProcess } from "./bai29";
 import rejectMessage from "./bai3";
+import { MultipleApiCalls } from "./bai30";
 import getRandomNumber from "./bai4";
 import simulateTask from "./bai5";
 import promiseRunAll from "./bai6";
@@ -53,3 +66,43 @@ runSequential()
 runParallel()
 //bai 17
 iteratePromises()
+//bai 18
+fetchUser(5).then((messsage)=> console.log(messsage))
+//bai 19
+fetchUsers([3,4,5]).then((message)=>console.log(message))
+//bai 20
+fetchUser20(10).then((message)=>console.log(message)).catch((message)=>console.log(message))
+//bai 21
+fetchTodo().then((data)=>console.log(data))
+//bai 22
+fetchMultipleTodos([1,2,3,4])
+//bai 23
+fectchCompleted()
+//bai 24
+postData("https://jsonplaceholder.typicode.com/posts", {
+  title: "Hello",
+  body: "This is a test",
+  userId: 11,
+});
+//bai 25
+downloadFile("example.pdf");
+//bai 26
+(async () => {
+     downloadFileWait5("example.pdf");
+})();
+//bai 27
+fetchWithRetry("https://jsonplaceholder.typicode.com/todos/a",5)
+//bai 28
+
+var task1=simulateTask(1000)
+var task2=simulateTask(1000)
+var task3=simulateTask(1000)
+var task4=simulateTask(1000)
+
+var tasks: Promise<any>[] = []
+tasks.push(task1, task2, task3, task4);
+batchProcess(tasks)
+//bai 29
+queueProcess(tasks)
+//bai 30
+MultipleApiCalls();

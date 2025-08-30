@@ -11,8 +11,21 @@ const bai14_1 = require("./bai14");
 const bai15_1 = require("./bai15");
 const bai16_1 = require("./bai16");
 const bai17_1 = require("./bai17");
+const bai18_1 = require("./bai18");
+const bai19_1 = require("./bai19");
 const bai2_1 = __importDefault(require("./bai2"));
+const bai20_1 = require("./bai20");
+const bai21_1 = require("./bai21");
+const bai22_1 = require("./bai22");
+const bai23_1 = require("./bai23");
+const bai24_1 = require("./bai24");
+const bai25_1 = require("./bai25");
+const bai26_1 = require("./bai26");
+const bai27_1 = require("./bai27");
+const bai28_1 = require("./bai28");
+const bai29_1 = require("./bai29");
 const bai3_1 = __importDefault(require("./bai3"));
+const bai30_1 = require("./bai30");
 const bai4_1 = __importDefault(require("./bai4"));
 const bai5_1 = __importDefault(require("./bai5"));
 const bai6_1 = __importDefault(require("./bai6"));
@@ -57,3 +70,41 @@ console.log((0, bai4_1.default)().then((message) => console.log("Bai 10: " + mes
 (0, bai16_1.runParallel)();
 //bai 17
 (0, bai17_1.iteratePromises)();
+//bai 18
+(0, bai18_1.fetchUser)(5).then((messsage) => console.log(messsage));
+//bai 19
+(0, bai19_1.fetchUsers)([3, 4, 5]).then((message) => console.log(message));
+//bai 20
+(0, bai20_1.fetchUser20)(10).then((message) => console.log(message)).catch((message) => console.log(message));
+//bai 21
+(0, bai21_1.fetchTodo)().then((data) => console.log(data));
+//bai 22
+(0, bai22_1.fetchMultipleTodos)([1, 2, 3, 4]);
+//bai 23
+(0, bai23_1.fectchCompleted)();
+//bai 24
+(0, bai24_1.postData)("https://jsonplaceholder.typicode.com/posts", {
+    title: "Hello",
+    body: "This is a test",
+    userId: 11,
+});
+//bai 25
+(0, bai25_1.downloadFile)("example.pdf");
+//bai 26
+(async () => {
+    (0, bai26_1.downloadFileWait5)("example.pdf");
+})();
+//bai 27
+(0, bai27_1.fetchWithRetry)("https://jsonplaceholder.typicode.com/todos/a", 5);
+//bai 28
+var task1 = (0, bai5_1.default)(1000);
+var task2 = (0, bai5_1.default)(1000);
+var task3 = (0, bai5_1.default)(1000);
+var task4 = (0, bai5_1.default)(1000);
+var tasks = [];
+tasks.push(task1, task2, task3, task4);
+(0, bai28_1.batchProcess)(tasks);
+//bai 29
+(0, bai29_1.queueProcess)(tasks);
+//bai 30
+(0, bai30_1.MultipleApiCalls)();
